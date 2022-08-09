@@ -5,12 +5,9 @@
     notification
     
 """
-from os import getcwd
+from automateSearches import *
 import PySimpleGUI as sg
 from random import randint
-from pandas import read_csv
-
-
 def returnInfo(country: str) -> list:
     """This Function takes in the country selected and 
     returns its associated assortment of subjects
@@ -20,7 +17,7 @@ def returnInfo(country: str) -> list:
     Returns: list of links divided by subjects as strings; line by line as it is found in the data txt file
     """
 
-    NUMLINES: int = 18
+    NUMLINES: int = 28
     result = []
 
     with open(getcwd() + "\\links\\Result Study Guide.txt", 'r') as text:
@@ -71,7 +68,7 @@ def gui():
         if event == sg.WIN_CLOSED or event == 'Cancel':  # if user closes window or clicks cancel
             break
         if event == 'find':
-            result = returnInfo(str(values[0]))
+            result = automateSearchOnline(values[0])
         if event == 'Random':
             randi: int = randint(0, len(countries) - 1)
             result: list = returnInfo(countries[randi])
