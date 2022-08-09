@@ -9,7 +9,11 @@ Returns top hits on each subject pertaining to the country using google
 
 Still a work in progres:
 --filter out some unreliable sources of information (websites)
+
 --add display of geographical location on world map
+
 --make more aestheticlly pleasing
+
 --add subjects 
+
 --add specific subject functionality 
